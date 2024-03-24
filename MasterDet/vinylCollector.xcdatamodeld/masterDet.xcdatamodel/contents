@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" codeGenerationType="class">
+        <attribute name="colour" optional="YES" attributeType="Transformable"/>
+        <attribute name="monthlyBudget" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="selectedCounter" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="categoryTarget" inverseEntity="Expense"/>
+        <userInfo/>
+    </entity>
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="occurrence" optional="YES" attributeType="String"/>
+        <attribute name="reminderFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="categoryTarget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="expenses" inverseEntity="Category"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="261" positionY="189" width="128" height="119"/>
+        <element name="Expense" positionX="263.52734375" positionY="444.88818359375" width="128" height="148"/>
+    </elements>
+</model>
